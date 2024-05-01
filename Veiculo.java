@@ -1,5 +1,7 @@
 public class Veiculo {
 
+    
+
     private String marca;
     private String modelo;
     private int ano;
@@ -38,5 +40,54 @@ public class Veiculo {
         System.out.println("Velocidade Atual: " + velocidadeAtual + " km/h");
     }
 
-    // Getters and Setters omitidos para brevidade
+    // Getters
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+    public int getVelocidadeMaxima() {
+        return velocidadeMaxima;
+    }
+
+    public int getVelocidadeAtual() {
+        return velocidadeAtual;
+    }
+
+    // Setters
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+
+    public void setVelocidadeMaxima(int velocidadeMaxima) {
+        if (velocidadeMaxima > 0) {
+            this.velocidadeMaxima = velocidadeMaxima;
+        } else {
+            System.out.println("Velocidade máxima deve ser um valor positivo!");
+        }
+    }
+
+    public void setVelocidadeAtual(int velocidadeAtual) {
+        if (velocidadeAtual >= 0 && velocidadeAtual <= velocidadeMaxima) {
+            this.velocidadeAtual = velocidadeAtual;
+        } else {
+            System.out.println("Velocidade atual deve estar entre 0 e a velocidade máxima!");
+        }
+    }
 }
+
